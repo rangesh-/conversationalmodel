@@ -1,1 +1,10 @@
 # conversationalmodel
+
+TEMPLATE """<start_of_turn>user
+{{ if .System }}{{ .System }} {{ end }}{{ .Prompt }}<end_of_turn>
+<start_of_turn>model
+{{ .Response }}<end_of_turn>
+"""
+PARAMETER repeat_penalty 1
+PARAMETER stop "<start_of_turn>"
+PARAMETER stop "<end_of_turn>"
